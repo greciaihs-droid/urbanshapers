@@ -8,7 +8,6 @@
 
   /* ---------------- LOADER ---------------- */
   const loader = document.getElementById("loader");
-  const loaderFill = document.getElementById("loaderFill");
   const loaderCount = document.getElementById("loaderCount");
   document.body.classList.add("is-loading");
 
@@ -16,24 +15,21 @@
     if (reduceMotion) { finishLoad(); return; }
     let p = 0;
     const tick = () => {
-      p += Math.random() * 14 + 4;
+      p += Math.random() * 16 + 5;
       if (p >= 100) p = 100;
-      loaderFill.style.width = p + "%";
-      loaderCount.textContent = Math.floor(p);
-      if (p < 100) {
-        setTimeout(tick, Math.random() * 160 + 60);
-      } else {
-        setTimeout(finishLoad, 420);
-      }
+      if (loaderCount) loaderCount.textContent = Math.floor(p);
+      if (p < 100) setTimeout(tick, Math.random() * 130 + 50);
+      else setTimeout(finishLoad, 450);
     };
     tick();
   }
 
   function finishLoad() {
+    if (!loader) return;
     loader.classList.add("is-done");
     document.body.classList.remove("is-loading");
     document.body.classList.add("is-loaded");
-    setTimeout(() => loader && loader.remove(), 1000);
+    setTimeout(() => loader && loader.remove(), 900);
   }
 
   /* ---------------- LANGUAGE TOGGLE ---------------- */
@@ -56,8 +52,7 @@
     if (stored !== "es") stored = "en";
     setLang(stored);
     langToggle.addEventListener("click", () => {
-      const next = document.documentElement.lang === "en" ? "es" : "en";
-      setLang(next);
+      setLang(document.documentElement.lang === "en" ? "es" : "en");
     });
   }
 
@@ -76,58 +71,27 @@
       },
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
-    // stagger siblings within lists/groups
     reveals.forEach((el) => {
       const sibs = Array.from(el.parentElement.children).filter((c) => c.classList.contains("reveal"));
       const i = sibs.indexOf(el);
-      if (i > 0) el.dataset.delay = Math.min(i * 70, 350);
+      if (i > 0) el.dataset.delay = Math.min(i * 70, 420);
       io.observe(el);
     });
   } else {
     reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---------------- NAV behavior ---------------- */
+  /* ---------------- NAV hide on scroll down ---------------- */
   const nav = document.getElementById("nav");
   let lastY = window.scrollY;
-  function onScroll() {
+  window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    nav.classList.toggle("is-scrolled", y > 40);
-    if (y > lastY && y > 300) nav.classList.add("is-hidden");
-    else nav.classList.remove("is-hidden");
+    if (nav) {
+      if (y > lastY && y > 400) nav.classList.add("is-hidden");
+      else nav.classList.remove("is-hidden");
+    }
     lastY = y;
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  /* ---------------- CUSTOM CURSOR ---------------- */
-  const cursor = document.getElementById("cursor");
-  if (cursor && window.matchMedia("(hover: hover)").matches) {
-    let cx = window.innerWidth / 2, cy = window.innerHeight / 2;
-    let tx = cx, ty = cy;
-    window.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; });
-    const render = () => {
-      cx += (tx - cx) * 0.18;
-      cy += (ty - cy) * 0.18;
-      cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(render);
-    };
-    render();
-    document.querySelectorAll("a, button, .find__list li, .pill").forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
-      el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
-    });
-  }
-
-  /* ---------------- HERO PARALLAX ---------------- */
-  const bike = document.querySelector(".hero__illustration");
-  if (bike && !reduceMotion) {
-    window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        bike.style.transform = `translateY(${y * 0.18}px) rotate(${y * 0.02}deg)`;
-      }
-    }, { passive: true });
-  }
+  }, { passive: true });
 
   /* ---------------- YEAR ---------------- */
   const year = document.getElementById("year");
@@ -135,7 +99,6 @@
 
   /* ---------------- KICK OFF ---------------- */
   window.addEventListener("load", runLoader);
-  // Fallback if load takes too long / already loaded
   if (document.readyState === "complete") runLoader();
   setTimeout(() => { if (document.body.classList.contains("is-loading")) finishLoad(); }, 6000);
 })();
