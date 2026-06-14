@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Shapers — Cities shape us, and we shape our cities</title>
+  <meta name="description" content="Urban Shapers is a platform exploring the ways cities shape us, and how we shape our cities. Podcast, newsletter, and stories about mobility, culture, climate and urban life." />
+
+  <meta property="og:title" content="Urban Shapers" />
+  <meta property="og:description" content="Cities shape us, and we shape our cities. A platform of stories, conversations and ideas about urban life." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#F3F0E7" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============== LOADER ============== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__word">
+        <span class="logo-wordmark logo-wordmark--loader">Urban<br/>Shapers<span class="dot">.</span></span>
+      </div>
+      <div class="loader__bar"><span class="loader__fill" id="loaderFill"></span></div>
+      <div class="loader__count"><span id="loaderCount">0</span><span>%</span></div>
+    </div>
+  </div>
+
+  <!-- ============== CURSOR ============== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- ============== NAV ============== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="Urban Shapers home">
+      <span class="logo-wordmark logo-wordmark--nav">Urban Shapers<span class="dot">.</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about" data-en="About" data-es="Acerca">About</a>
+      <a href="#podcast" data-en="Podcast" data-es="Podcast">Podcast</a>
+      <a href="#newsletter" data-en="Newsletter" data-es="Newsletter">Newsletter</a>
+      <a href="#why" data-en="Why" data-es="Por qué">Why</a>
+    </nav>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+      <span class="lang-toggle__opt is-active" data-lang="en">EN</span>
+      <span class="lang-toggle__sep">/</span>
+      <span class="lang-toggle__opt" data-lang="es">ES</span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============== HERO ============== -->
+    <section class="hero" id="hero">
+      <!-- Drop a generated video here later: <video class="hero__video" autoplay muted loop playsinline src="assets/hero.mp4"></video> -->
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob--orange"></div>
+        <div class="blob blob--lime"></div>
+        <div class="blob blob--blue"></div>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow reveal" data-en="A platform for cities &amp; the people who shape them" data-es="Una plataforma sobre las ciudades y quienes las moldean">A platform for cities &amp; the people who shape them</p>
+        <h1 class="hero__title">
+          <span class="line"><span class="word">Urban</span></span>
+          <span class="line"><span class="word word--outline">Shapers</span><span class="word-dot">.</span></span>
+        </h1>
+        <p class="hero__lede reveal" data-en="Cities shape us — and we, in turn, shape our cities." data-es="Las ciudades nos moldean, y nosotros, a su vez, moldeamos nuestras ciudades.">Cities shape us — and we, in turn, shape our cities.</p>
+      </div>
+
+      <div class="hero__illustration" aria-hidden="true">
+        <!-- Tangled bicycle illustration -->
+        <svg viewBox="0 0 220 180" class="bike-svg" role="img">
+          <g class="bike-wheels">
+            <circle cx="42" cy="138" r="30" class="wheel"/>
+            <circle cx="178" cy="138" r="30" class="wheel"/>
+            <circle cx="42" cy="138" r="4" class="hub"/>
+            <circle cx="178" cy="138" r="4" class="hub"/>
+          </g>
+          <path class="bike-frame" d="M42 138 L92 138 L120 70 L150 138 M92 138 L120 138 L120 70 M120 70 Q140 55 150 60 M150 138 L178 138 M150 60 L162 48"/>
+          <path class="bike-seat" d="M104 64 q14 -6 24 0"/>
+          <path class="bike-tangle" d="M70 110 q40 -50 80 -10 q30 30 -10 50 q-50 20 -70 -20 q-15 -40 40 -55 q50 -10 60 30"/>
+        </svg>
+      </div>
+
+      <a href="#about" class="hero__scroll" data-en="Scroll" data-es="Desliza">Scroll
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- ============== MARQUEE ============== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Mobility</span><span class="sep">✳</span><span>Culture</span><span class="sep">✳</span><span>Climate</span><span class="sep">✳</span><span>Public Space</span><span class="sep">✳</span><span>Communication</span><span class="sep">✳</span><span>Everyday Urban Life</span><span class="sep">✳</span>
+        <span>Mobility</span><span class="sep">✳</span><span>Culture</span><span class="sep">✳</span><span>Climate</span><span class="sep">✳</span><span>Public Space</span><span class="sep">✳</span><span>Communication</span><span class="sep">✳</span><span>Everyday Urban Life</span><span class="sep">✳</span>
+      </div>
+    </div>
+
+    <!-- ============== ABOUT PLATFORM ============== -->
+    <section class="section intro" id="about">
+      <div class="section__index">01</div>
+      <div class="intro__grid">
+        <h2 class="section__kicker reveal" data-en="What is Urban Shapers" data-es="Qué es Urban Shapers">What is Urban Shapers</h2>
+        <div class="intro__body">
+          <p class="big-text reveal" data-en="Urban Shapers is a platform exploring the ways cities shape us — and how we, in turn, shape our cities." data-es="Urban Shapers es una plataforma que explora las formas en que las ciudades nos moldean, y cómo nosotros, a su vez, moldeamos nuestras ciudades.">Urban Shapers is a platform exploring the ways cities shape us — and how we, in turn, shape our cities.</p>
+          <p class="reveal" data-en="Through storytelling, conversations, research, and community-building, Urban Shapers examines mobility, culture, climate, public space, communication, and everyday urban life from a human-centered perspective." data-es="A través de narrativas, conversaciones, investigación y construcción de comunidad, Urban Shapers examina la movilidad, la cultura, el clima, el espacio público, la comunicación y la vida urbana cotidiana desde una perspectiva centrada en las personas.">Through storytelling, conversations, research, and community-building, Urban Shapers examines mobility, culture, climate, public space, communication, and everyday urban life from a human-centered perspective.</p>
+          <p class="reveal" data-en="Cities are not just places we move through. They influence how we connect, what we value, who we meet, and what kind of future we imagine. Urban Shapers exists to make those relationships visible." data-es="Las ciudades no son solo lugares por los que transitamos. Influyen en cómo nos conectamos, qué valoramos, a quién conocemos y qué tipo de futuro imaginamos. Urban Shapers existe para hacer visibles esas relaciones.">Cities are not just places we move through. They influence how we connect, what we value, who we meet, and what kind of future we imagine. Urban Shapers exists to make those relationships visible.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PODCAST ============== -->
+    <section class="section podcast" id="podcast">
+      <div class="section__index">02</div>
+      <div class="podcast__head">
+        <span class="tag reveal" data-en="Podcast" data-es="Podcast">Podcast</span>
+        <h2 class="display reveal" data-en="Urban Shapers Podcast" data-es="Urban Shapers Podcast">Urban Shapers Podcast</h2>
+      </div>
+      <div class="podcast__grid">
+        <div class="podcast__text">
+          <p class="reveal" data-en="Conversations about cities, mobility, climate, culture, communication, and the people reimagining urban life." data-es="Conversaciones sobre ciudades, movilidad, clima, cultura, comunicación y las personas que reimaginan la vida urbana.">Conversations about cities, mobility, climate, culture, communication, and the people reimagining urban life.</p>
+          <p class="reveal" data-en="The podcast brings together practitioners, activists, researchers, artists, policymakers, and everyday city-makers to explore how our environments shape our experiences and what it takes to create more livable, equitable, and sustainable places." data-es="El podcast reúne a profesionales, activistas, investigadores, artistas, tomadores de decisiones y constructores cotidianos de ciudad para explorar cómo nuestros entornos moldean nuestras experiencias y qué se necesita para crear lugares más habitables, equitativos y sostenibles.">The podcast brings together practitioners, activists, researchers, artists, policymakers, and everyday city-makers to explore how our environments shape our experiences and what it takes to create more livable, equitable, and sustainable places.</p>
+          <p class="reveal" data-en="Some episodes might focus on cycling, public space, and road safety. Others might explore climate action, belonging, culture, gender, communication, or the stories hidden in our streets." data-es="Algunos episodios pueden centrarse en el ciclismo, el espacio público y la seguridad vial. Otros pueden explorar la acción climática, la pertenencia, la cultura, el género, la comunicación o las historias ocultas en nuestras calles.">Some episodes might focus on cycling, public space, and road safety. Others might explore climate action, belonging, culture, gender, communication, or the stories hidden in our streets.</p>
+
+          <div class="listen reveal">
+            <span class="listen__label" data-en="Listen on" data-es="Escucha en">Listen on</span>
+            <div class="listen__links">
+              <a class="pill pill--spotify" href="https://open.spotify.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.59 14.43a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.21c3.81-.87 7.08-.5 9.72 1.11a.62.62 0 01.21.85zm1.22-2.72a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.49c3.64-1.1 8.16-.56 11.24 1.33a.78.78 0 01.25 1.07zm.11-2.84C14.8 8.96 9.34 8.78 6.25 9.72a.93.93 0 11-.54-1.78c3.55-1.08 9.58-.87 13.36 1.37a.93.93 0 01-.96 1.6z"/></svg>
+                Spotify
+              </a>
+              <a class="pill pill--apple" href="https://podcasts.apple.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 00-1.9 19.82c-.06-.5-.06-1.27 0-1.82.06-.5.74-3.26.74-3.26s-.19-.38-.19-.94c0-.88.51-1.54 1.15-1.54.54 0 .8.41.8.9 0 .55-.35 1.36-.53 2.12-.15.63.32 1.15.94 1.15 1.13 0 1.9-1.45 1.9-3.17 0-1.31-.88-2.29-2.49-2.29a2.83 2.83 0 00-2.95 2.84c0 .55.21 1.14.48 1.46a.2.2 0 01.04.19l-.18.74c-.03.12-.1.15-.22.09-.83-.39-1.35-1.6-1.35-2.58 0-2.1 1.53-4.03 4.4-4.03 2.31 0 4.11 1.65 4.11 3.85 0 2.3-1.45 4.15-3.46 4.15-.68 0-1.31-.35-1.53-.77l-.42 1.58c-.15.58-.55 1.3-.82 1.74A10 10 0 1012 2z"/></svg>
+                Apple Podcasts
+              </a>
+              <a class="pill pill--substack" href="https://substack.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 3h18v3H3V3zm0 5h18v3H3V8zm0 5l9 5 9-5v8l-9-5-9 5v-8z"/></svg>
+                Substack
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="podcast__quote reveal">
+          <p data-en="At its core, the podcast asks:" data-es="En esencia, el podcast pregunta:">At its core, the podcast asks:</p>
+          <blockquote data-en="What kind of cities are we creating, and what kind of people do those cities help us become?" data-es="¿Qué tipo de ciudades estamos creando, y qué tipo de personas nos ayudan a ser esas ciudades?">What kind of cities are we creating, and what kind of people do those cities help us become?</blockquote>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============== NEWSLETTER ============== -->
+    <section class="section newsletter" id="newsletter">
+      <div class="section__index">03</div>
+      <div class="newsletter__inner">
+        <span class="tag tag--light reveal" data-en="Newsletter" data-es="Newsletter">Newsletter</span>
+        <h2 class="display display--script reveal" data-en="The City Between Us" data-es="La Ciudad Entre Nosotros">The City Between Us</h2>
+        <p class="big-text reveal" data-en="Stories, reflections, and conversations about mobility, culture, climate, and the ways cities shape our everyday lives." data-es="Historias, reflexiones y conversaciones sobre movilidad, cultura, clima y las formas en que las ciudades moldean nuestra vida cotidiana.">Stories, reflections, and conversations about mobility, culture, climate, and the ways cities shape our everyday lives.</p>
+
+        <div class="newsletter__cols">
+          <p class="reveal" data-en="The City Between Us is the newsletter of Urban Shapers. Part essay, part field notes, part ongoing conversation, it explores the spaces between policy and people, infrastructure and experience, movement and belonging." data-es="La Ciudad Entre Nosotros es el newsletter de Urban Shapers. En parte ensayo, en parte notas de campo, en parte conversación continua, explora los espacios entre la política y las personas, la infraestructura y la experiencia, el movimiento y la pertenencia.">The City Between Us is the newsletter of Urban Shapers. Part essay, part field notes, part ongoing conversation, it explores the spaces between policy and people, infrastructure and experience, movement and belonging.</p>
+          <p class="reveal" data-en="Some editions may begin with a bike ride. Others with a conversation overheard on a bus, a climate story, a question about public space, or an observation from another city. It's for anyone curious about how cities influence the way we live, connect, move, and imagine our futures." data-es="Algunas ediciones pueden comenzar con un paseo en bici. Otras con una conversación escuchada en un autobús, una historia sobre el clima, una pregunta sobre el espacio público o una observación desde otra ciudad. Es para cualquiera con curiosidad por cómo las ciudades influyen en cómo vivimos, nos conectamos, nos movemos e imaginamos nuestro futuro.">Some editions may begin with a bike ride. Others with a conversation overheard on a bus, a climate story, a question about public space, or an observation from another city. It's for anyone curious about how cities influence the way we live, connect, move, and imagine our futures.</p>
+        </div>
+
+        <p class="newsletter__manifesto reveal" data-en="Because cities are not just built with concrete and asphalt. They are built with stories, relationships, language, and collective imagination. And there is always a city between us." data-es="Porque las ciudades no se construyen solo con concreto y asfalto. Se construyen con historias, relaciones, lenguaje e imaginación colectiva. Y siempre hay una ciudad entre nosotros.">Because cities are not just built with concrete and asphalt. They are built with stories, relationships, language, and collective imagination. And there is always a city between us.</p>
+
+        <a class="btn btn--big reveal" href="https://substack.com/" target="_blank" rel="noopener" data-en="Read &amp; subscribe on Substack →" data-es="Lee y suscríbete en Substack →">Read &amp; subscribe on Substack →</a>
+      </div>
+    </section>
+
+    <!-- ============== ABOUT GRECIA ============== -->
+    <section class="section about-me" id="about-me">
+      <div class="section__index">04</div>
+      <div class="about-me__grid">
+        <div class="about-me__intro">
+          <span class="tag reveal" data-en="About" data-es="Acerca de mí">About</span>
+          <h2 class="display reveal" data-en="Hi, I'm Grecia Hernández." data-es="Hola, soy Grecia Hernández.">Hi, I'm Grecia Hernández.</h2>
+        </div>
+        <div class="about-me__body">
+          <p class="big-text reveal" data-en="I'm passionate about cities, bicycles, and the stories that emerge from public space." data-es="Me apasionan las ciudades, las bicicletas y las historias que surgen del espacio público.">I'm passionate about cities, bicycles, and the stories that emerge from public space.</p>
+          <p class="reveal" data-en="My journey began in 2014 with Birula Radio, a radio project about cycling and urban life that became the gateway to my work in communication, mobility advocacy, and city-making." data-es="Mi camino comenzó en 2014 con Birula Radio, un proyecto de radio sobre ciclismo y vida urbana que se convirtió en la puerta de entrada a mi trabajo en comunicación, incidencia en movilidad y construcción de ciudad.">My journey began in 2014 with Birula Radio, a radio project about cycling and urban life that became the gateway to my work in communication, mobility advocacy, and city-making.</p>
+          <p class="reveal" data-en="Since then, I've collaborated on projects related to sustainable mobility, road safety, urban culture, climate action, and public communication. Today, I serve as Bicycle Mayor of Guadalajara and continue building spaces for learning, dialogue, and action through Urban Shapers." data-es="Desde entonces, he colaborado en proyectos relacionados con la movilidad sostenible, la seguridad vial, la cultura urbana, la acción climática y la comunicación pública. Hoy soy Alcaldesa de la Bicicleta de Guadalajara y sigo construyendo espacios de aprendizaje, diálogo y acción a través de Urban Shapers.">Since then, I've collaborated on projects related to sustainable mobility, road safety, urban culture, climate action, and public communication. Today, I serve as Bicycle Mayor of Guadalajara and continue building spaces for learning, dialogue, and action through Urban Shapers.</p>
+          <p class="reveal" data-en="Urban Shapers brings together my work as a communicator, educator, podcaster, and urban advocate. It's a place to ask questions, share stories, and imagine better cities together." data-es="Urban Shapers reúne mi trabajo como comunicadora, educadora, podcaster y defensora urbana. Es un lugar para hacer preguntas, compartir historias e imaginar juntos mejores ciudades.">Urban Shapers brings together my work as a communicator, educator, podcaster, and urban advocate. It's a place to ask questions, share stories, and imagine better cities together.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== WHY THIS MATTERS ============== -->
+    <section class="section why" id="why">
+      <div class="section__index">05</div>
+      <div class="why__inner">
+        <h2 class="section__kicker reveal" data-en="Why this matters" data-es="Por qué importa">Why this matters</h2>
+        <p class="huge-text reveal" data-en="Cities are one of the most powerful forces shaping our daily lives." data-es="Las ciudades son una de las fuerzas más poderosas que moldean nuestra vida cotidiana.">Cities are one of the most powerful forces shaping our daily lives.</p>
+        <div class="why__cols">
+          <p class="reveal" data-en="They influence our health, relationships, opportunities, safety, and sense of belonging. Yet many of the conversations about cities remain confined to technical language, policy documents, or professional circles." data-es="Influyen en nuestra salud, relaciones, oportunidades, seguridad y sentido de pertenencia. Sin embargo, muchas conversaciones sobre las ciudades siguen confinadas al lenguaje técnico, los documentos de política o los círculos profesionales.">They influence our health, relationships, opportunities, safety, and sense of belonging. Yet many of the conversations about cities remain confined to technical language, policy documents, or professional circles.</p>
+          <p class="reveal" data-en="Urban Shapers exists to bridge that gap. By translating complex urban issues into accessible stories and conversations, the project helps people understand how mobility, climate, communication, culture, and public space affect everyday life — and how ordinary people can help shape change." data-es="Urban Shapers existe para cerrar esa brecha. Al traducir temas urbanos complejos en historias y conversaciones accesibles, el proyecto ayuda a las personas a entender cómo la movilidad, el clima, la comunicación, la cultura y el espacio público afectan la vida cotidiana, y cómo la gente común puede ayudar a impulsar el cambio.">Urban Shapers exists to bridge that gap. By translating complex urban issues into accessible stories and conversations, the project helps people understand how mobility, climate, communication, culture, and public space affect everyday life — and how ordinary people can help shape change.</p>
+        </div>
+        <p class="why__punch reveal" data-en="Because creating better cities is not only the responsibility of planners, politicians, or engineers. &lt;em&gt;It belongs to all of us.&lt;/em&gt;" data-es="Porque crear mejores ciudades no es solo responsabilidad de urbanistas, políticos o ingenieros. &lt;em&gt;Nos pertenece a todos.&lt;/em&gt;">Because creating better cities is not only the responsibility of planners, politicians, or engineers. <em>It belongs to all of us.</em></p>
+      </div>
+    </section>
+
+    <!-- ============== WHAT YOU'LL FIND ============== -->
+    <section class="section find" id="find">
+      <div class="section__index">06</div>
+      <h2 class="section__kicker reveal" data-en="What you'll find here" data-es="Lo que encontrarás aquí">What you'll find here</h2>
+      <ul class="find__list">
+        <li class="reveal" data-en="Podcast conversations" data-es="Conversaciones del podcast">Podcast conversations</li>
+        <li class="reveal" data-en="Essays &amp; reflections — The City Between Us" data-es="Ensayos y reflexiones — La Ciudad Entre Nosotros">Essays &amp; reflections — The City Between Us</li>
+        <li class="reveal" data-en="Urban observations &amp; field notes" data-es="Observaciones urbanas y notas de campo">Urban observations &amp; field notes</li>
+        <li class="reveal" data-en="Mobility &amp; road safety education" data-es="Educación en movilidad y seguridad vial">Mobility &amp; road safety education</li>
+        <li class="reveal" data-en="Climate &amp; city storytelling" data-es="Narrativas de clima y ciudad">Climate &amp; city storytelling</li>
+        <li class="reveal" data-en="Workshops &amp; talks" data-es="Talleres y charlas">Workshops &amp; talks</li>
+        <li class="reveal" data-en="Community projects" data-es="Proyectos comunitarios">Community projects</li>
+        <li class="reveal" data-en="Resources for people-centered cities" data-es="Recursos para ciudades centradas en las personas">Resources for people-centered cities</li>
+      </ul>
+    </section>
+
+    <!-- ============== STATEMENT / CTA ============== -->
+    <section class="section statement" id="statement">
+      <p class="statement__text reveal" data-en="Urban Shapers explores the relationship between people and places through stories, conversations, and ideas about mobility, culture, climate, and city life." data-es="Urban Shapers explora la relación entre las personas y los lugares a través de historias, conversaciones e ideas sobre movilidad, cultura, clima y vida urbana.">Urban Shapers explores the relationship between people and places through stories, conversations, and ideas about mobility, culture, climate, and city life.</p>
+      <p class="statement__sub reveal" data-en="Through its podcast and newsletter, The City Between Us, it creates space for reflection, learning, and collective imagination about the future of our cities." data-es="A través de su podcast y su newsletter, La Ciudad Entre Nosotros, crea un espacio para la reflexión, el aprendizaje y la imaginación colectiva sobre el futuro de nuestras ciudades.">Through its podcast and newsletter, The City Between Us, it creates space for reflection, learning, and collective imagination about the future of our cities.</p>
+    </section>
+
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer" id="footer">
+    <div class="footer__top">
+      <span class="logo-wordmark logo-wordmark--footer">Urban Shapers<span class="dot">.</span></span>
+      <p class="footer__claim" data-en="There is always a city between us." data-es="Siempre hay una ciudad entre nosotros.">There is always a city between us.</p>
+    </div>
+    <div class="footer__links">
+      <div class="footer__col">
+        <span class="footer__label" data-en="Listen" data-es="Escucha">Listen</span>
+        <a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://podcasts.apple.com/" target="_blank" rel="noopener">Apple Podcasts</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__label" data-en="Read" data-es="Lee">Read</span>
+        <a href="https://substack.com/" target="_blank" rel="noopener">The City Between Us</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__label" data-en="Follow" data-es="Sigue">Follow</span>
+        <a href="https://www.instagram.com/urbanshapersmx/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Urban Shapers · Guadalajara</span>
+      <span data-en="Made with curiosity about cities." data-es="Hecho con curiosidad por las ciudades.">Made with curiosity about cities.</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
