@@ -57,6 +57,15 @@ img, svg { display: block; max-width: 100%; }
 .logo-wordmark--loader { font-size: clamp(3rem, 12vw, 7rem); }
 .logo-wordmark--footer { font-size: clamp(2.5rem, 9vw, 6rem); line-height: 0.85; }
 
+/* If assets/logo.png exists it shows; otherwise the img removes itself
+   (onerror) and .no-logo reveals the styled text fallback. */
+.logo-img { height: 2.1em; width: auto; }
+.logo-wordmark--loader .logo-img { height: 2.4em; }
+.logo-wordmark--footer .logo-img { height: 2.4em; }
+.logo-wordmark .logo-text { display: none; }
+.logo-wordmark.no-logo .logo-text { display: inline-block; }
+.logo-wordmark.no-logo .logo-img { display: none; }
+
 /* =========================================================
    LOADER
    ========================================================= */
