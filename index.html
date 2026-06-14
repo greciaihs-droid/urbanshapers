@@ -41,7 +41,10 @@
   <!-- ============== NAV ============== -->
   <header class="nav" id="nav">
     <a href="#top" class="nav__brand" aria-label="Urban Shapers home">
-      <span class="logo-wordmark logo-wordmark--nav">Urban Shapers<span class="dot">.</span></span>
+      <span class="logo-wordmark logo-wordmark--nav" data-logo>
+        <img src="assets/logo.png" alt="Urban Shapers" class="logo-img" onerror="this.closest('[data-logo]').classList.add('no-logo'); this.remove();" />
+        <span class="logo-text">Urban Shapers<span class="dot">.</span></span>
+      </span>
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#about" data-en="About" data-es="Acerca">About</a>
