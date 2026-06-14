@@ -9,6 +9,7 @@
   /* ---------------- LOADER ---------------- */
   const loader = document.getElementById("loader");
   const loaderCount = document.getElementById("loaderCount");
+  const loaderFill = document.getElementById("loaderFill");
   document.body.classList.add("is-loading");
 
   function runLoader() {
@@ -18,6 +19,7 @@
       p += Math.random() * 16 + 5;
       if (p >= 100) p = 100;
       if (loaderCount) loaderCount.textContent = Math.floor(p);
+      if (loaderFill) loaderFill.style.width = p + "%";
       if (p < 100) setTimeout(tick, Math.random() * 130 + 50);
       else setTimeout(finishLoad, 450);
     };
